@@ -1,0 +1,123 @@
+.header {
+    z-index: 2;
+}
+
+header {
+    padding: 20px 0 0 0;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        @media only screen and (max-width: 750px) {
+            width: 32px;
+        }
+    }
+}
+
+.socials {
+    @include flex;
+    column-gap: 10px;
+    justify-content: flex-end;
+
+    svg {
+        fill: $light;
+        width: 16px;
+        height: 16px;
+        transition: fill 0.25s ease;
+    }
+
+    &-item {
+        &:hover {
+            svg {
+                fill: $action;
+            }
+        }
+    }
+}
+
+.menu {
+    @include flex;
+    gap: 0 16px;
+
+    &-mobile {
+        display: none;
+        margin-left: auto;
+        cursor: pointer;
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: $light;
+        }
+
+        @media only screen and (max-width: 750px) {
+            display: block;
+        }
+
+        &__list {
+            position: fixed;
+            width: 100%;
+            height: max-content;
+            left: 0;
+            top: 0;
+            background: $primary;
+            height: 100vh;
+
+            .icon {
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                cursor: pointer;
+            }
+
+            .logo {
+                position: absolute;
+                width: 40px;
+                top: 20px;
+                left: 20px;
+            }
+        }
+
+        &__items {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+            text-align: center;
+            gap: 20px 0;
+        }
+
+        &__item {
+            color: $light;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            &.active {
+                color: $action;
+            }
+        }
+    }
+
+    &-item {
+        a {
+            color: $light;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: color 0.25s ease;
+
+            &:hover,
+            &.active {
+                color: $action;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 750px) {
+        display: none;
+    }
+}

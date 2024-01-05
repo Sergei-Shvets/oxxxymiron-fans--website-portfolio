@@ -1,0 +1,182 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    overflow-x: hidden;
+    background: $primary;
+    color: $light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    color: $light;
+}
+
+a {
+    color: $light;
+    text-decoration: none;
+}
+
+section {
+    position: relative;
+    z-index: 1;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+
+    @media only screen and (max-width: 1366px) {
+        width: calc(100vw - 30px);
+        padding: 0 15px;
+    }
+}
+
+.icon {
+    width: 12px;
+    height: 12px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+h2 {
+    color: $light;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.button-more {
+    display: block;
+    margin: 40px auto 0;
+    color: $light;
+    font-size: 14px;
+    font-weight: 900;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.25s;
+
+    &:hover {
+        color: $action;
+    }
+
+    @media only screen and (max-width: 1366px) {
+        font-size: 12px;
+        margin-top: 25px;
+    }
+}
+
+.loader {
+    position: relative;
+    @include flex;
+    width: 100%;
+    min-height: 20vh;
+
+    img {
+        max-width: 50px;
+        animation: beat 0.75s linear infinite;
+    }
+}
+
+@keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+.page {
+    padding: 40px 0;
+
+    &-title {
+        color: $light;
+        font-size: 60px;
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 125%;
+
+        @media only screen and (max-width: 670px) {
+            font-size: 48px;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 425px) {
+            font-size: 40px;
+        }
+    }
+}
+
+.shop {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0 0 0;
+
+    &-text {
+        font-size: 24px;
+        line-height: 125%;
+        text-align: center;
+        margin: 0 0 50px 0;
+    }
+
+    &-img {
+        max-width: 600px;
+        margin: 0 auto 50px;
+    }
+}
